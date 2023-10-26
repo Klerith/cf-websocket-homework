@@ -1,17 +1,15 @@
 import { Module } from '@nestjs/common';
-import { ChatModule } from './chat/chat.module';
 import { ServeStaticModule } from '@nestjs/serve-static';
 import { join } from 'path';
 
 
 
 
-@Module({
-  
+@Module({  
 
   imports: [
-    ChatModule,
 
+    // Esto habilita la carpeta publica para que se pueda acceder desde el navegador
     ServeStaticModule.forRoot({
       rootPath: join(__dirname, '..', 'public'),
     }),
