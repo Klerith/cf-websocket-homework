@@ -10,12 +10,6 @@ body, html {
   background: #F7F7F7;
 }
 
-.center {
-  position: absolute;
-  top: 50%;
-  left: calc(50% + 12rem);
-  transform: translate(-50%, -50%);
-}
 
 .bottom-right {
   position: absolute;
