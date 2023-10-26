@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>CodePen - Daily UI #013 | Direct Messaging</title>
+  <title>Chat personal</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" />
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css' />
   <link rel="stylesheet" href="css/styles.css">
@@ -12,75 +12,12 @@
 
 <body>
 
-  <div class="information-bubble">
-    <h3>Estado del chat: 
-      <small id="status-online">online</small> 
-      <small id="status-offline">offline</small>  
-    </h3>
 
-    <h3>Personas conectadas</h3>
-    <ul>
-      <li>Fernando</li>
-      <li>Alberto</li>
-    </ul>
-  </div>
-
-
-  <!-- Ubicación del chat -->
-  <div class="bottom-right">
-
-
-    <!-- Chat -->
-    <div class="chat">
-
-      <!-- Información del contacto -->
-      <div class="contact bar">
-
-        <div class="pic stark"></div>
-
-        <div class="name">
-          Tony Stark
-        </div>
-        <div class="seen">
-          Hoy a las 12:56
-        </div>
-      </div>
-
-
-      <div class="messages" id="chat">
-
-        <!-- Mostrar tiempo -->
-        <div class="time">
-          Hoy a las 11:41
-        </div>
-
-        <!-- Mensajes de otros -->
-        <div class="message incoming">
-          Uh, what is this guy's problem, Mr. Stark? 🤔
-        </div>
-
-        <!-- Mis mensajes -->
-        <div class="message">
-          Uh, he's from space, he came here to steal a necklace from a wizard.
-        </div>
-
-
-        <!-- Burbujas mientras escribe -->
-        <div class="message stark">
-          <div class="typing typing-1"></div>
-          <div class="typing typing-2"></div>
-          <div class="typing typing-3"></div>
-        </div>
-
-
-      </div>
-
-
+  <div class="center">
 
       <!-- Inputs y Forms -->
-      <form class="input">
-        <input placeholder="Escribe tu mensaje aquí" type="text" />
-        <i class="fas fa-paper-plane"></i>
+      <form class="form" onsubmit="">
+        <input placeholder="Tu nombre" type="text" />
       </form>
 
 
@@ -88,9 +25,23 @@
   </div>
 
 
+  <script>
 
-  <!-- Scripts -->
-  <script src="js/chat.js"></script>
+    const form = document.querySelector('.form');
+    const input = document.querySelector('input');
+
+    form.addEventListener( 'submit', (e) => {
+      e.preventDefault();
+      const name = input.value;
+      if ( name ) {
+        localStorage.setItem('name', name);
+        window.location.href = 'chat.html';
+      }
+    })
+
+
+  </script>
+
 
 </body>
 
