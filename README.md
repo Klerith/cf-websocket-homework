@@ -12,8 +12,9 @@ Crear un servidor de Nest con WebSocket y un chat
 git clone https://github.com/Klerith/cf-websocket-homework.git
 ```
 
-2. Instalar dependencias
+2. Navegar dentro de la carpeta e instalar dependencias
 ```
+cd <directorio>
 npm install
 ```
 
