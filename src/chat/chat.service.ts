@@ -14,11 +14,12 @@ export class ChatService {
   private clients: Record<string, Client> = {};
 
 
-  onClientConnect(client: Client) {
+  onClientConnected(client: Client) {
     this.clients[client.id] = client;
   }
 
-  onClientDisconnect(id: string) {
+  onClientDisconnected(id: string) {
+    console.log(id);
     delete this.clients[id];
   }
 

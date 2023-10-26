@@ -24,24 +24,34 @@ export class ChatGateway implements OnModuleInit {
         return;
       }
 
+      this.chatService.onClientConnected({ id: socket.id, name: `${userName}` });
+
       // this.server.emit('on-clients-changed', { message: 'Hola desde el server' });
       this.server.emit('on-clients-changed', this.chatService.getClients() );
-      
 
-
+      socket.on('disconnect', () => {
+          this.chatService.onClientDisconnected(socket.id);
+          this.server.emit('on-clients-changed', this.chatService.getClients() );
+      });
     });
+
+    
   }
 
 
-  @SubscribeMessage('message')
-  handleNewClient( 
-    @MessageBody() data: string,
+  @SubscribeMessage('send-message')
+  handleMessage( 
+    @MessageBody() message: string,
     @ConnectedSocket() client: Socket
   ) {
+    const userName = client.handshake.headers['user-name'];
     
-    client.broadcast.emit('message', { message: 'Hola desde el server '})
+    if ( !message ) return;
+    this.server.emit(
+      'on-message', 
+      { userId: client.id, userName, message }
+    )
 
-    return data;
   }
 
 
