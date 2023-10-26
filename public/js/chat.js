@@ -45,6 +45,8 @@ const renderMessage = (payload) => {
   divElement.innerHTML = message;
   chatElement.appendChild(divElement);
 
+  // Scroll al final de los mensajes
+  chatElement.scrollTop = chatElement.scrollHeight;
 }
 
 
