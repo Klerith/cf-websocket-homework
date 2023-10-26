@@ -1,6 +1,7 @@
 import { Module } from '@nestjs/common';
 import { ServeStaticModule } from '@nestjs/serve-static';
 import { join } from 'path';
+import { Chat2Module } from './chat2/chat2.module';
 
 
 
@@ -13,6 +14,8 @@ import { join } from 'path';
     ServeStaticModule.forRoot({
       rootPath: join(__dirname, '..', 'public'),
     }),
+
+    Chat2Module,
   ]
 })
 export class AppModule {}
