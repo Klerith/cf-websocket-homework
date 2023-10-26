@@ -189,3 +189,7 @@ form.addEventListener( 'submit', ( event ) => {
 * Es importante que el nombre del evento sea el mismo en ambos lados.
 
 * Abran otra instancia del navegador web y manden mensajes desde ambos lados.
+ 
+### Si logras ver los mensajes, lo lograste!
+
+
