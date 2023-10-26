@@ -35,5 +35,5 @@ npm i --save @nestjs/websockets @nestjs/platform-socket.io
 
 2. Crear el módulo, gateway y servicio, usar el CLI de Nest y seleccionar la opción de WebSockets, pero decir que **NO** a la parte del CRUD
 ```
-nest g res chat
+nest g res chat --no-spec
 ```
