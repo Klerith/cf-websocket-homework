@@ -118,6 +118,7 @@ const socket = io();
   }
 ```
 * Realizar las importaciones necesarias de los decoradores usados.
+* Socket viene de **'socket.io'**
 
 
 ### Client
@@ -187,3 +188,4 @@ form.addEventListener( 'submit', ( event ) => {
   
 * Es importante que el nombre del evento sea el mismo en ambos lados.
 
+* Abran otra instancia del navegador web y manden mensajes desde ambos lados.
