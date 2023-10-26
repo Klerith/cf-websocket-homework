@@ -190,6 +190,6 @@ form.addEventListener( 'submit', ( event ) => {
 
 * Abran otra instancia del navegador web y manden mensajes desde ambos lados.
  
-### Si logras ver los mensajes, lo lograste!
+### Si logras ver los mensajes, ya sabes cómo hacer una comunicación bilateral cliente-servidor, servidor-cliente
 
 
