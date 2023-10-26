@@ -10,6 +10,17 @@ body, html {
   background: #F7F7F7;
 }
 
+.information-bubble {
+  margin-left: 20px;
+}
+
+#status-online {
+  color: green;
+}
+#status-offline {
+  color: red;
+}
+
 
 .bottom-right {
   position: absolute;
