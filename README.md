@@ -133,7 +133,7 @@ const chatElement = document.querySelector('#chat');
 2. Crear una función para renderizar los mensajes en el chat:
 ```
 const renderMessage = (payload) => {
-  const { userId, message } = payload
+  const { userId, message } = payload;
 
   // Crear un DIV Element
   const divElement = document.createElement('div');
@@ -154,3 +154,35 @@ const renderMessage = (payload) => {
 
 }
 ```
+
+
+3. Agregar el siguiente código para escuchar el evento **on-message**:
+```
+socket.on('on-message', (payload) => {
+  renderMessage(payload);
+});
+```
+* Alternativo
+```
+socket.on('on-message', renderMessage);
+```
+
+4. Agregar un listener en el formulario para escuchar el evento **submit**:
+```
+
+form.addEventListener( 'submit', ( event ) => {
+  event.preventDefault();
+
+  const message = input.value;
+  input.value = '';
+
+  socket.emit( 'send-message', message );
+
+} );
+
+```
+
+* **Importante:**  Noten que en el Gateway del servidor, tenemos este código ```@SubscribeMessage('send-message')``` el cual escucha el evento que estamos mandando desde el cliente. 
+  
+* Es importante que el nombre del evento sea el mismo en ambos lados.
+
