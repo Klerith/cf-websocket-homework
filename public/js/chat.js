@@ -1,7 +1,9 @@
 
 const username = localStorage.getItem('name');
-if ( !username ) throw new Error('Name is required');
-
+if ( !username ) {
+  window.location.replace('/')
+  throw new Error('Username is required');
+}
 
 const socket = io({
   extraHeaders: {
