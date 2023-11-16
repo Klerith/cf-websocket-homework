@@ -19,6 +19,7 @@ export class ChatGateway implements OnModuleInit {
   onModuleInit() {
     this.server.on('connection', (socket: Socket) => {
       const userName = socket.handshake.headers['user-name'];
+      //! const { name, token } = socket.handshake.auth
       if ( !userName ) {
         socket.disconnect();
         return;
