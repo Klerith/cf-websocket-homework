@@ -2,6 +2,7 @@ import { Module } from '@nestjs/common';
 import { ServeStaticModule } from '@nestjs/serve-static';
 import { join } from 'path';
 import { Chat2Module } from './chat2/chat2.module';
+import { ChatModule } from './chat/chat.module';
 
 
 
@@ -16,6 +17,8 @@ import { Chat2Module } from './chat2/chat2.module';
     }),
 
     Chat2Module,
+
+    ChatModule,
   ]
 })
 export class AppModule {}
